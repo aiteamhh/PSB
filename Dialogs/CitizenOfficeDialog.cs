@@ -59,6 +59,8 @@ namespace DottyBot.Dialogs
             context.UserData.TryGetValue("Name", out string name);
             await context.PostAsync($"Danke!\n\nDeine Daten lauten:\n\n{name}\n\nGeburtsdatum: {result}");
             await context.PostAsync("Du kannst das Dokument in 14 Tagen im Bürgerbüro abholen. :)");
+
+            PromptDialog.Choice(context, InformationTypeRetrieved, choices1, "Brauchst du noch etwas vom Bürgerbüro?");
         }
         #endregion
 

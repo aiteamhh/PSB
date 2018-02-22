@@ -43,9 +43,9 @@ namespace DottyBot
                 IConversationUpdateActivity iConversationUpdated = message as IConversationUpdateActivity;
                 if (iConversationUpdated != null)
                 {
-                    ConnectorClient connector = new ConnectorClient(new System.Uri(message.ServiceUrl));
+                    ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
 
-                    foreach (var member in iConversationUpdated.MembersAdded ?? System.Array.Empty<ChannelAccount>())
+                    foreach (var member in iConversationUpdated.MembersAdded ?? Array.Empty<ChannelAccount>())
                     {
                         if (member.Id == iConversationUpdated.Recipient.Id)
                         {                           
