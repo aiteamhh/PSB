@@ -38,15 +38,15 @@ namespace DottyBot.Dialogs
 			}
             context.Wait(MessageReceived);
         }
-        
-        //[LuisIntent("Hilfe")]
-        //private async Task Hilfe(IDialogContext context, LuisResult result)
-        //{
-        //    /*TODO: Einstellung keine Freitexteingabe*/
-        //    await context.PostAsync(HelpText);
-        //}
 
-        [LuisIntent("Hilfe")]//"Menu")]
+        [LuisIntent("Hilfe")]
+        private async Task Hilfe(IDialogContext context, LuisResult result)
+        {
+            /*TODO: Einstellung keine Freitexteingabe*/
+            await context.PostAsync(HelpText);
+        }
+
+        [LuisIntent("Menu")]
         private async Task Menu(IDialogContext context, LuisResult result)
         {
             PromptDialog.Choice(context, MenuChoiceMade, new string[] { choiceCitizenOffice, choiceGreenSpaces, choiceDisposal }, "Folgende Themen habe ich im Angebot");
